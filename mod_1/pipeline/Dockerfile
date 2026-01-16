@@ -1,11 +1,20 @@
 # base docker image that we will build on
 FROM python:3.13.11-slim
 
-# set up our image by installing prerequisites
-RUN pip install pandas pyarrow
+# copy uv binary from github
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/
 
 # set up the working directory inside the container
 WORKDIR /app
+
+# add virtual environment to path
+ENV PATH="/app/.venv/bin:$PATH"
+
+# copy dependency files
+COPY pyproject.toml uv.lock .python-version ./
+# sync dependencies
+RUN uv sync --locked
+
 # copy the script to the workdir
 COPY pipeline.py pipeline.py
 

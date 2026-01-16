@@ -14,5 +14,6 @@ dependencies = [
 [dependency-groups]
 dev = [
     "jupyter>=1.1.1",
+    "jupyterlab-vim>=4.1.4",
     "pgcli>=4.4.0",
 ]

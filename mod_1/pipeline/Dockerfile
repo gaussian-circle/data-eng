@@ -17,6 +17,7 @@ RUN uv sync --locked
 
 # copy the script to the workdir
 COPY ingest_data.py ingest_data.py
+COPY get_zone_data.py get_zone_data.py
 
 # define what to do first when the container runs
-ENTRYPOINT ["python", "ingest_data.py"]
+ENTRYPOINT ["python", "get_zone_data.py"]

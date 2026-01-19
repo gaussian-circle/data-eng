@@ -19,5 +19,5 @@ RUN uv sync --locked
 COPY ingest_data.py ingest_data.py
 COPY get_zone_data.py get_zone_data.py
 
-# define what to do first when the container runs
+# define what to do first when the container runs - switch scripts to get intended effect
 ENTRYPOINT ["python", "get_zone_data.py"]

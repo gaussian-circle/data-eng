@@ -12,7 +12,7 @@ from sqlalchemy import create_engine
 @click.option("--pg-host", default="localhost", help="PostgreSQL host")
 @click.option("--pg-port", default=5432, type=int, help="PostgreSQL port")
 @click.option("--pg-db", default="ny_taxi", help="PostgreSQL database name")
-@click.option("--target-table", default="yellow_taxi_data", help="Target table name")
+@click.option("--target-table", default="zones", help="Target table name")
 def run(
     pg_user,
     pg_pass,

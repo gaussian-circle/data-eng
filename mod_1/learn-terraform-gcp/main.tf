@@ -8,9 +8,9 @@ terraform {
 }
 
 provider "google" {
-  project = "project-791f23ef-cd77-4fab-a72"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  project = var.project
+  region  = var.region
+  zone    = var.zone
 }
 
 # This data source gets a temporary token for the service account

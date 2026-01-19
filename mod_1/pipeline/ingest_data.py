@@ -75,7 +75,7 @@ def run(
 
     print("first chunk completely inserted")
 
-    number_of_entries = 136976
+    number_of_entries = 1369765
     remaining_chunks = number_of_entries // chunksize
 
     for df_chunk in tqdm(df_iter, total=remaining_chunks):

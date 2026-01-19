@@ -63,12 +63,12 @@ def run(
     # create the table
     first_chunk = next(df_iter)
 
-    first_chunk.head(0).to_sql(name="yellow_taxi_data", con=engine, if_exists="replace")
+    first_chunk.head(0).to_sql(name=target_table, con=engine, if_exists="replace")
 
     print("Table created")
 
     first_chunk.to_sql(
-        name="yellow_taxi_data",
+        name=target_table,
         con=engine,
         if_exists="append",
     )
@@ -80,7 +80,7 @@ def run(
 
     for df_chunk in tqdm(df_iter, total=remaining_chunks):
         df_chunk.to_sql(
-            name="yellow_taxi_data",
+            name=target_table,
             con=engine,
             if_exists="append",
         )

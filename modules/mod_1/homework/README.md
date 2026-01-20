@@ -15,6 +15,9 @@ $ python -m pip --version
 pip 25.3 from /usr/local/lib/python3.13/site-packages/pip (python 3.13)
 ```
 
+# Q2
+The given container is identified by both its service name and its container_name. So, both `db:5432` and `postgres:5432` work.
+
 # Q3
 ```sql
 SELECT

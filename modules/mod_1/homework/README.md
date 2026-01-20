@@ -70,4 +70,29 @@ LIMIT
 |Jamaica|46490.73999999994 |
 |Central Park|45626.49999999998 |
 
-
+# Q6
+```sql
+SELECT
+	ZDO."Zone" AS "drop off zone",
+	MAX(TRIPS."tip_amount") AS "largest tip"
+FROM
+	GREEN_TRIP_DATA TRIPS
+	JOIN ZONES ZPU ON TRIPS."PULocationID" = ZPU."LocationID"
+	JOIN ZONES ZDO ON TRIPS."DOLocationID" = ZDO."LocationID"
+WHERE
+	ZPU."Zone" = 'East Harlem North'
+	AND ZDO."Zone" IS NOT NULL
+GROUP BY
+	ZDO."Zone"
+ORDER BY
+	MAX(TRIPS."tip_amount") DESC
+LIMIT
+	5;
+```
+|drop off zone|largest tip       |
+|-------------|------------------|
+|Yorkville West|81.89             |
+|LaGuardia Airport|50                |
+|East Harlem North|45                |
+|Long Island City/Queens Plaza|34.25             |
+|JFK Airport  |23.53             |

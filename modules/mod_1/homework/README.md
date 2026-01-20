@@ -96,3 +96,25 @@ LIMIT
 |East Harlem North|45                |
 |Long Island City/Queens Plaza|34.25             |
 |JFK Airport  |23.53             |
+
+# Q7
+1. Generate ADC by confirming your identity
+```bash
+gcloud auth application-default login
+```
+
+2. Give yourself the token creator role on the pertinent service account
+```bash
+gcloud iam service-accounts add-iam-policy-binding \
+    <SERVICE_ACCOUNT_EMAIL> \
+    --member="user:YOUR_EMAIL@gmail.com" \
+    --role="roles/iam.serviceAccountTokenCreator"
+```
+
+3. With the configuration files in place, run `terraform init` to download the provider plugins and set up the backend
+
+4. Generate proposed changes and auto-execute the plan using `terraform apply -auto-approve`
+
+5. Remove all resources managed by terraform using `terraform destroy`
+
+

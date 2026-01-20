@@ -47,3 +47,27 @@ LIMIT
 |-----------|
 |2025-11-14 15:36:27|
 
+# Q5
+```sql
+SELECT
+	ZONES."Zone",
+	SUM(TRIPS.TOTAL_AMOUNT) AS "Total Amount"
+FROM
+	GREEN_TRIP_DATA TRIPS
+	JOIN ZONES ON TRIPS."PULocationID" = ZONES."LocationID"
+GROUP BY
+	ZONES."Zone"
+ORDER BY
+	SUM(TRIPS.TOTAL_AMOUNT) DESC
+LIMIT
+	5;
+```
+|Zone|Total Amount      |
+|----|------------------|
+|East Harlem North|257684.7000000002 |
+|East Harlem South|126791.81000000062|
+|Morningside Heights|49146.64000000001 |
+|Jamaica|46490.73999999994 |
+|Central Park|45626.49999999998 |
+
+

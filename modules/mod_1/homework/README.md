@@ -30,4 +30,20 @@ WHERE
 |-----|
 |8007 |
 
+# Q4
+```sql
+SELECT
+	LPEP_PICKUP_DATETIME AS "Longest day"
+FROM
+	GREEN_TRIP_DATA
+WHERE
+	TRIP_DISTANCE < 100
+ORDER BY
+	TRIP_DISTANCE DESC
+LIMIT
+	1;
+```
+|Longest day|
+|-----------|
+|2025-11-14 15:36:27|
 

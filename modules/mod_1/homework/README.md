@@ -1,7 +1,7 @@
 # Q1
 - Build a docker image using the given Dockerfile 
 ```bash
-docker build -t hw:latest
+docker build -t hw:latest .
 ```
 
 - Run docker interactively using the image 
